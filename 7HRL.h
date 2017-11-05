@@ -6,75 +6,6 @@
 #include<iostream>
 using namespace std;
 
-// class Actor{
-// public:
-//     Actor () : alive(true) {}
-//     bool isAlive(){
-//         return alive;
-//     }
-
-// private:
-//     bool alive;
-// };
-
-// class Dungeon{
-// public:
-//     Dungeon(){
-//         srand(time(NULL));
-       
-//         generateFloor();
-//     }
-//     void generateFloor(){
-//         sizeX = 5 + rand() % 20;
-//         sizeY = 5 + rand() % 10;
-//         map = (char **)malloc(sizeX * sizeof(char *));
-//         for (int i = 0; i < sizeX; ++i){
-//             map[i] = (char *)malloc(sizeY * sizeof(char));
-//         }
-//         for (int i = 0;i<sizeY;i++){
-// 			for(int j = 0;j<sizeX;j++){
-// 				map[i][j] = '.';
-// 			}
-// 			for(int j = 0;j<sizeX;j++){
-// 				map[i][0] = '#';
-			
-// 				if (i == 0){
-// 					  map[i][j] = '#';
-			  
-// 				}
-// 				if (i == sizeX-1){
-// 					map[i][j] = '#';
-//                 }
-                
-//                 map[i][sizeX-1] = '#';
-//                 map[sizeY-1][j] = '#';
-                
-//             }
-            
-//         }
-//     }
-        
-
-    
-//     void print(){
-//         for(int i = 0;i<sizeY;i++){
-// 			for(int j = 0;j<sizeX;j++){
-// 				cout<<map[i][j];
-// 			}
-// 			cout<<"\n";
-// 		}
-//     }
-
-
-
-// private:
-//     unsigned int sizeX;
-//     unsigned int sizeY;
-//     char ** map;
-
-// };
-
-
 
 class Dungeon{
 public:
@@ -142,21 +73,65 @@ public:
             char tmpS = 7;
             cout << tmpS;
             usleep(200);
-            phone();
+            if (phone()){
+                paperwork();
+            }
         }
     }
 
-    void phone(){
-        
-        
+    void paperwork(){
+        cout << " _______ \n \\_______\\ \n  \\_______\\ \n   \\_______\\ \n    \\_______\\ \n\n";
+        int dis = rand() % 12;
+        if (dis == 0){
+            cout << "You get a paper cut and accidentally give half the monsteres the epock off.\n";
+            monsters = monsters - (monsters / 2);
+        } else if (dis == 1){
+            cout << "Your siatica acts up.\n You buy a yoga ball.\n";
+            money -= 5;
+        } else if (dis == 2){
+            cout << "Due to budget cuts you have to lay off a monster.\n";
+            if (monsters > 0){
+                monsters -= 1;
+            }
+        } else if (dis == 3){
+            cout << "You look outside and Pan Pan is selling your car.\n";
+            money -= 40;
+            cout << "You buy a new one\n";
+        } else if (dis == 4){
+            cout << "You accidentally sent a 5 diamond chef to the board meeting.\n";
+            if (monsters > 0){
+                monsters -= 1;
+            }
+        } else if (dis == 5){
+            cout << "You win a renewable energy grant.\n";
+            money += 15;
+        } else if (dis == 6){
+            cout << "The pipes start leaking more than Google Chrome\n";
+            money -= 25;
+        } else if (dis == 7){
+            cout << "You spare a humans life so they can work in your sweatshop making low quality, designer, knockoff wallets.\n";
+            money += 2;
+        } else if (dis == 8){
+            cout << "You organize the garbage instead of doing paper work.\n";
+        } else if (dis == 9){
+            cout << "Payroll fucked up your cash.\n";
+            money -= 10;
+        } else {
+            cout << "Boring paperwork as usual\n";
+        }
+
+    }
+
+    bool phone(){
+     
         cout<<"  ___ \n /   | \n |--- \n | \n |___ \n \\   | \n  --- \n ";
         cout<<"\nAnswer the phone?[y/n]";
         string tmp;
         getline(cin, tmp);
         if (tmp == "n"){
-            return;
+            return true;
         } 
-        int dis = rand() % 20;
+        int dis = rand() % 22;
         if (dis == 3){
             money -= 20;
             cout<< "Cracked Cement! Looks like you have to repair the ceiling.\n";
@@ -210,10 +185,14 @@ public:
             cout<< "Were fixing the phone line. Don't pick up next time it rings.\n";
         } else if (dis == 2){
             cout<< "The grease is in the spoon! I repeat, the grease is in the spoon!\n";
+        } else if (dis == 20){
+            cout << "You win A BRAND NEW CAR!\n";
+            money += 20;
         } else {
             cout<< "They hung up\n";
         }
         cout <<"\n";
+        return false;
     }
 
 
