@@ -29,7 +29,7 @@ public:
         } else {
             cout << "Money $ " << money << "    Puny Humans Killed " << humansKilled << "    Toilet Gold Level " << toiletGold << "    Monsters " << monsters << "    Diamonds " << diamonds << "\n";
             cout << "----------------------------------------------------------------------------\n";
-            cout << "Take Turn[t]  |   Buy diamonds ($" << diamondPrice << ")[d]  |  Buy more monsters ($" << monsterPrice <<") [m]  |  Quit[q]\n";
+            cout << "Take Turn[t]  |   Buy diamonds ($" << diamondPrice << ")[d]  |  Buy more monsters ($" << monsterPrice <<") [m]  |  Quit[q]  |  Golder Toilet ($ "<< monsterPrice <<")[g]\n";
        
         }
     }
@@ -56,8 +56,39 @@ public:
                 if (!withdraw(monsterPrice)){
                     system("clear");
                     cout<< "Not enough money\n";
+                    return false;
+                } else {
+                    toiletGold += 1;
+                    monsterPrice  = monsterPrice * 1.08;
+                    system("clear");
+                }
+
+            } else if (input == "q"){
+                exit(1);
+            } else if (input == "m"){
+                if (!withdraw(monsterPrice)){
+                    system("clear");
+                    cout<<"Not Enough Money\n";
                     return true;
                 } else {
+                    system("clear");
+                    monsters += 3;
+                    monsterPrice = monsterPrice * 1.08;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            if (input == "t"){
+                return false;
+            } else if (input == "g"){
+                if (!withdraw(monsterPrice)){
+                    system("clear");
+                    cout<< "Not enough money\n";
+                    return true;
+                } else {
+                    system("clear");
+                    cout << "Your Toilet looks exactly the same, only heavier...\n";
                     toiletGold += 1;
                     monsterPrice  = monsterPrice * 1.08;
                 }
@@ -70,23 +101,7 @@ public:
                     cout<<"Not Enough Money\n";
                     return true;
                 } else {
-                    monsters += 3;
-                    monsterPrice = monsterPrice * 1.08;
-                }
-            } else {
-                return false;
-            }
-        } else {
-            if (input == "t"){
-                return false;
-            } else if (input == "q"){
-                exit(1);
-            } else if (input == "m"){
-                if (!withdraw(monsterPrice)){
                     system("clear");
-                    cout<<"Not Enough Money\n";
-                    return true;
-                } else {
                     monsters += 3;
                     monsterPrice = monsterPrice * 1.08;
                 }
@@ -96,11 +111,13 @@ public:
                     cout << "Not enough money\n";
                     return true;
                 } else {
+                    system("clear");
                     diamonds += 1;
                     diamondPrice = diamondPrice * 1.3;
                 }
                 
             } else {
+                system("clear");
                 return false;
             }
 

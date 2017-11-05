@@ -51,7 +51,7 @@ int main(){
         d.printScreen();
         getline(cin, input);
         if (!d.parse(input)){
-            system("clear");
+            // system("clear");
         } 
 
         d.turn();
