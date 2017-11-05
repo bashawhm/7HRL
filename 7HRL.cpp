@@ -18,7 +18,9 @@ int main(){
     Dungeon d;
     system("clear");
 
-    cout << "You must have a toilet plated with 7 gold layers to beat Melania Trump\nBuy more monsters to earn money faster!\n";
+    cout << "Welcome to The Golden Toilet 2: The Quest for the Goldest Toilet!\n\n";
+
+    cout << "You must have a toilet plated with 7 gold layers to beat Melania Trump\nBuy more monsters to earn money faster!\n\n";
 
     while(d.toiletLevel() < 7){
         int mel = rand() % 20;
@@ -42,7 +44,7 @@ int main(){
     }
     d.act1();
     cout << "<Melania> Gold toilets are going out of fashion.\nMelania moves on to diamond encrusted toilets.\n\n\n\n";
-    cout << "Melania laughs at your puny toilet.\n";
+    cout << "Melania laughs at your puny toilet.\n\n";
 
     while (!d.isDone()){
         string input;
