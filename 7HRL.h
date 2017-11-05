@@ -94,7 +94,7 @@ public:
 
 
     //false if failed, true if success
-    bool withdraw(unsigned int price){
+    bool withdraw(int price){
         if (money < price){
             return false;
         } else {
@@ -139,11 +139,16 @@ public:
         money += humansKilled;
         unsigned int tmp = rand() % 3;
         if (tmp == 1){
+            char tmpS = 7;
+            cout << tmpS;
+            usleep(200);
             phone();
         }
     }
 
     void phone(){
+        
+        
         cout<<"  ___ \n /   | \n |--- \n | \n |___ \n \\   | \n  --- \n ";
         cout<<"\nAnswer the phone?[y/n]";
         string tmp;
