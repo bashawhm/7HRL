@@ -100,7 +100,6 @@ public:
                     diamondPrice = diamondPrice * 1.3;
                 }
                 
-                
             } else {
                 return false;
             }
@@ -180,7 +179,6 @@ public:
     }
 
     bool phone(){
-     
         cout<<"  ___ \n /   | \n |--- \n | \n |___ \n \\   | \n  --- \n ";
         cout<<"\nAnswer the phone?[y/n]";
         string tmp;
@@ -188,74 +186,154 @@ public:
         if (tmp == "n"){
             return true;
         } 
+
         int dis = rand() % 25;
-        if (dis == 3){
-            money -= 20;
-            cout<< "Cracked Cement! Looks like you have to repair the ceiling.\n";
-        } else if (dis == 4){
-            money -= 10;
-            cout<< "Pipes Burst! All your antique bibles are ruined!!\n";
-        } else if (dis == 5){
-            money -= 50;
-            cout<< "The monsters are loose! Pay a puny human to capture them.\n";
-        } else if (dis == 6){
-            cout<< "Do you canoe?";
-        }  else if (dis == 7){
-            money -= 5;
-            cout << "You have been chosen. They will come soon.\n";
-            cout << "Out of fear you board up the windows.\n";
-        } else if (dis == 8){
-            cout<< "The number 3 is very important to you now.\n";
-        } else if (dis == 9){
-            money -= 10;
-            cout<< "Your phychic advisor suggests that you work on improving relationships with those closest to you because you'll need them the next lunar review.\n";
-            cout << "You buy $10 worth of candy for you aunt.\n";
-        } else if (dis == 10){
-            cout<< "Your phychic advisor has had very strong vibrations coming from your house. You should stay away from any building activities during the next week.\n";
-        } else if (dis == 11){            
-            cout<< "Your phychic advisor suggests that you keep your secrets well this month. There may be untrustworthy indeviduals in your environs.\n";
-        } else if (dis == 12){
-            cout<< "The drop off has been made. You've been warned.\n";
-        } else if (dis == 13){
-            money -= 5;
-            cout << "Your phychic advisor suggests that you plan your meetings very carefully this month because you may have some unexpected news.\n";
-            cout <<"You spend $5 on confetti to chear yourself up.\n"; 
-        } else if (dis == 14){
-            cout<< "The number 6 will be very important for you in the next 24 hours.\n";
-        } else if (dis == 15){
-            cout<< "Wrong Number Sorry.\n";
-        } else if (dis == 16){
-            money -= 50;
-            cout<< "The end is near. Make preparations.\n";
-            cout <<"You spend $50 out of paranoia.\n";
-        } else if (dis == 17){
-            money -= 10;
-            cout<< "The flashing light was just a test. You'll have plenty of warning next time.\n";
-            cout << "You spent $10 on black curtains.\n";
-        } else if (dis == 18){
-            cout<< "Your phychic advisor's head just exploded. Be forwarned.\n";
-        } else if (dis == 19){
-            money -= 10;
-            cout<< "They're coming soon. Maybe you should think twice about opening the door.\n";
-            cout << "You spend $10 on titanium doors.\n";
-        } else if (dis == 3){
-            cout<< "Were fixing the phone line. Don't pick up next time it rings.\n";
-        } else if (dis == 2){
-            cout<< "The grease is in the spoon! I repeat, the grease is in the spoon!\n";
-        } else if (dis == 20){
-            cout << "You win A BRAND NEW CAR!\n";
-            money += 50;
-        } else if (dis == 21){
-            cout << "Heres your EPA grant!\n";
-            money += 20;
-        } else if (dis == 22){
-            cout << "Promotionn!\n";
-            cout << "...\nIt wasn't a real promotion, and you embarass yourself.\n";
+        if (act == 0){
             
+            if (dis == 3){
+                money -= 20;
+                cout<< "Cracked Cement! Looks like you have to repair the ceiling.\n";
+            } else if (dis == 4){
+                money -= 10;
+                cout<< "Pipes Burst! All your antique bibles are ruined!!\n";
+            } else if (dis == 5){
+                money -= 50;
+                cout<< "The monsters are loose! Pay a puny human to capture them.\n";
+            } else if (dis == 6){
+                cout<< "Do you canoe?";
+            }  else if (dis == 7){
+                money -= 5;
+                cout << "You have been chosen. They will come soon.\n";
+                cout << "Out of fear you board up the windows.\n";
+            } else if (dis == 8){
+                cout<< "The number 3 is very important to you now.\n";
+            } else if (dis == 9){
+                money -= 10;
+                cout<< "Your phychic advisor suggests that you work on improving relationships with those closest to you because you'll need them the next lunar review.\n";
+                cout << "You buy $10 worth of candy for you aunt.\n";
+            } else if (dis == 10){
+                cout<< "Your phychic advisor has had very strong vibrations coming from your house. You should stay away from any building activities during the next week.\n";
+            } else if (dis == 11){            
+                cout<< "Your phychic advisor suggests that you keep your secrets well this month. There may be untrustworthy indeviduals in your environs.\n";
+            } else if (dis == 12){
+                cout<< "The drop off has been made. You've been warned.\n";
+            } else if (dis == 13){
+                money -= 5;
+                cout << "Your phychic advisor suggests that you plan your meetings very carefully this month because you may have some unexpected news.\n";
+                cout <<"You spend $5 on confetti to chear yourself up.\n"; 
+            } else if (dis == 14){
+                cout<< "The number 6 will be very important for you in the next 24 hours.\n";
+            } else if (dis == 15){
+                cout<< "Wrong Number Sorry.\n";
+            } else if (dis == 16){
+                money -= 50;
+                cout<< "The end is near. Make preparations.\n";
+                cout <<"You spend $50 out of paranoia.\n";
+            } else if (dis == 17){
+                money -= 10;
+                cout<< "The flashing light was just a test. You'll have plenty of warning next time.\n";
+                cout << "You spent $10 on black curtains.\n";
+            } else if (dis == 18){
+                cout<< "Your phychic advisor's head just exploded. Be forwarned.\n";
+            } else if (dis == 19){
+                money -= 10;
+                cout<< "They're coming soon. Maybe you should think twice about opening the door.\n";
+                cout << "You spend $10 on titanium doors.\n";
+            } else if (dis == 3){
+                cout<< "Were fixing the phone line. Don't pick up next time it rings.\n";
+            } else if (dis == 2){
+                cout<< "The grease is in the spoon! I repeat, the grease is in the spoon!\n";
+            } else if (dis == 20){
+                cout << "You win A BRAND NEW CAR!\n";
+                money += 50;
+            } else if (dis == 21){
+                cout << "Heres your EPA grant!\n";
+                money += 20;
+            } else if (dis == 22){
+                cout << "Promotionn!\n";
+                cout << "...\nIt wasn't a real promotion, and you embarass yourself.\n";
+            
+            } else {
+                cout<< "They hung up\n";
+            }
+            cout <<"\n";
+
         } else {
-            cout<< "They hung up\n";
+            if (dis == 3){
+                money -= 20;
+                cout<< "Cracked Cement! Looks like you have to repair the ceiling.\n";
+            } else if (dis == 4){
+                money -= 10;
+                cout<< "Pipes Burst! All your antique bibles are ruined!!\n";
+            } else if (dis == 5){
+                money -= 50;
+                cout<< "The monsters are loose! Pay a puny human to capture them.\n";
+            } else if (dis == 6){
+                cout<< "Your tweets inspire a boycott. Your company declares bankrupcy and you are left with 10% of your net worth\n";
+                money = money * 0.1;
+            }  else if (dis == 7){
+                money -= 5;
+                cout << "You have been chosen. They will come soon.\n";
+                cout << "Out of fear you board up the windows.\n";
+            } else if (dis == 8){
+                cout<< "The number 3 is very important to you now.\n";
+            } else if (dis == 9){
+                money -= 10;
+                cout<< "Your phychic advisor suggests that you work on improving relationships with those closest to you because you'll need them the next lunar review.\n";
+                cout << "You buy $10 worth of candy for you aunt.\n";
+            } else if (dis == 10 || dis == 11){
+                if (money < 0){
+                    cout<< "Your monsters go on strike.\n";
+                    monsters = monsters * 0.3;
+                } else {
+                    cout << "I hate you.\n";
+                }
+            } else if (dis == 11){            
+                cout<< "Your phychic advisor suggests that you keep your secrets well this month. There may be untrustworthy indeviduals in your environs.\n";
+            } else if (dis == 12){
+                cout<< "The drop off has been made. You've been warned.\n";
+            } else if (dis == 13){
+                money -= 5;
+                cout << "Your phychic advisor suggests that you plan your meetings very carefully this month because you may have some unexpected news.\n";
+                cout <<"You spend $5 on confetti to chear yourself up.\n"; 
+            } else if (dis == 14){
+                cout<< "The number 6 will be very important for you in the next 24 hours.\n";
+            } else if (dis == 15){
+                cout<< "Wrong Number Sorry.\n";
+            } else if (dis == 16){
+                money -= 50;
+                cout<< "The end is near. Make preparations.\n";
+                cout <<"You spend $50 out of paranoia.\n";
+            } else if (dis == 17){
+                money -= 10;
+                cout<< "The flashing light was just a test. You'll have plenty of warning next time.\n";
+                cout << "You spent $10 on black curtains.\n";
+            } else if (dis == 18){
+                cout<< "Your phychic advisor's head just exploded. Be forwarned.\n";
+            } else if (dis == 19){
+                money -= 10;
+                cout<< "They're coming soon. Maybe you should think twice about opening the door.\n";
+                cout << "You spend $10 on titanium doors.\n";
+            } else if (dis == 3){
+                cout<< "Were fixing the phone line. Don't pick up next time it rings.\n";
+            } else if (dis == 2){
+                cout<< "The grease is in the spoon! I repeat, the grease is in the spoon!\n";
+            } else if (dis == 20){
+                cout << "You win A BRAND NEW CAR!\n";
+                money += 50;
+            } else if (dis == 21){
+                cout << "Heres your EPA grant!\n";
+                money += 20;
+            } else if (dis == 22){
+                cout << "Promotionn!\n";
+                cout << "...\nIt wasn't a real promotion, and you embarass yourself.\n";
+            
+            } else {
+                cout<< "They hung up\n";
+            }
+            cout <<"\n";
+
         }
-        cout <<"\n";
         return false;
     }
 
