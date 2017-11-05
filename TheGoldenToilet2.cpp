@@ -26,7 +26,7 @@ int main(){
         int mel = rand() % 20;
         if (mel == 5){
             cout << "<Melania> " << melania[i] << "\n";
-            if (i < 5){
+            if (i < 4){
                 ++i;
             } else {
                 i = 0;
